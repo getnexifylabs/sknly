@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SKNLY — Your skin, understood</title>
-  <meta name="title" content="SKNLY — Your skin, understood">
+  <title>SKNLY — Glow, simply</title>
+  <meta name="title" content="SKNLY — Glow, simply">
   <meta name="description"
     content="Take a selfie, get an AI-powered skincare routine personalized for your skin type. Track progress. Glow with confidence.">
   <meta name="keywords" content="skincare, skin analysis, ai skincare, personalized skincare, skin health, glow app">
@@ -43,11 +43,14 @@
     }
   </script>
   <style>
+    /* Default: light + clean */
     .gradient-bg {
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(255, 193, 220, .7), transparent 60%),
-        radial-gradient(1200px 700px at 80% 110%, rgba(168, 146, 255, .55), transparent 60%),
-        linear-gradient(180deg, #ffe7f2 0%, #ffffff 60%, #fff 100%)
+      background:
+        radial-gradient(900px 500px at 20% -10%, rgba(255, 193, 220, .18), transparent 70%),
+        radial-gradient(900px 500px at 80% 110%, rgba(168, 146, 255, .12), transparent 70%),
+        linear-gradient(180deg, #ffffff 0%, #ffffff 60%, #fff 100%);
     }
+
 
     .title-grad {
       background: linear-gradient(90deg, #fb3f98, #7c53ff, #45c6ff, #fb3f98);
@@ -67,36 +70,52 @@
         background-position: 200% 0
       }
     }
+
+    /* Mobile: even lighter (almost white) */
+    @media (max-width: 640px) {
+      .gradient-bg {
+        background:
+          radial-gradient(700px 400px at 50% -20%, rgba(255, 234, 243, 0.1), transparent 45%),
+          linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+      }
+    }
   </style>
 </head>
 
-<body class="gradient-bg min-h-screen text-ink antialiased mt-10">
+<body class="gradient-bg min-h-screen text-ink antialiased mt-6">
 
   <!-- background accents -->
   <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-    <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-pink-300/40 blur-3xl animate-blob"></div>
-    <div class="absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-fuchsia-300/40 blur-3xl animate-blob"></div>
+    <div
+      class="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-pink-300/20 md:bg-pink-300/40 blur-3xl animate-blob">
+    </div>
+
+    <div
+      class="absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-fuchsia-300/20 md:bg-fuchsia-300/20 blur-3xl animate-blob">
+    </div>
+
   </div>
 
   <!-- TikTok top-right hint (floating button) -->
-  <a href="#tiktok-note" aria-label="Tap the three dots on TikTok" class="fixed z-50 top-4 right-4 md:top-6 md:right-6">
-    <span class="absolute inset-0 rounded-full ring-4 ring-white/60 animate-ping"></span>
+  <!-- <a href="#tiktok-note" aria-label="Tap the three dots on TikTok" class="fixed z-50 top-4 right-4 md:top-6 md:right-6">
+    <span class="absolute inset-0 rounded-full ring-4 ring-skyblue/20 animate-ping"></span>
     <span class="relative flex h-12 w-12 items-center justify-center rounded-2xl
                  bg-gradient-to-b from-slate-200 to-slate-400 text-white shadow-lg
-                 ring-1 ring-black/10 animate-floaty">
+                 ring-1 ring-white/10 animate-floaty">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <rect x="2.5" y="2.5" width="19" height="19" rx="6" fill="#6B7C93" />
         <path d="M9 15l6-6M10 8h7v7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       </svg>
     </span>
-  </a>
+  </a> -->
+
 
   <!-- Single-screen hero -->
   <main class="relative grid place-items-center min-h-screen px-6">
     <div class="w-full max-w-3xl text-center">
       <!-- logo -->
       <div class="grid place-items-center text-white mb-8">
-        <img src="img/sknly-logo.png" height="90" width="90" class="rounded shadow" />
+        <img src="img/sknly.svg" width="90" class="mb-8" />
       </div>
 
       <h1 class="mt-4 text-3xl md:text-4xl font-bold leading-[1.05]">
@@ -126,7 +145,6 @@
       </div>
 
       <div class="my-10 max-w-3xl mx-auto border-t border-dotted border-gray-400/40"></div>
-
 
       <!-- Before / After Teaser -->
       <section id="imagine" class="mt-5 md:mt-5">
@@ -160,6 +178,22 @@
           may
           vary.</p>
       </section>
+
+      <div class="my-10 max-w-3xl mx-auto border-t border-dotted border-gray-400/40"></div>
+
+      <!-- Contact Us -->
+      <section id="contact" class="mt-4 md:mt-4">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-2xl md:text-3xl font-extrabold">Contact us</h2>
+          <p class="mt-2 text-sm md:text-base text-black/70">
+            Questions, feedback, or support? We’re here to help.
+          </p>
+          <a href="mailto:sknlyapp@gmail.com" class="text-sm font-medium text-ink underline underline-offset-4">
+            sknlyapp@gmail.com
+          </a>
+        </div>
+      </section>
+
 
       <!-- tiny footer line -->
       <div class="mt-14 mb-10 text-xs text-black/50">© 2025 SKNLY • <a href="privacy.html" target="_blank">Privacy</a> •
